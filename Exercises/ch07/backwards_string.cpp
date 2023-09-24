@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <ctype.h>
+#include <cctype>
 using namespace std;
 
 //void count_letters(string s, char i){
@@ -55,19 +55,30 @@ while (index >= 0) {
 }
 
 string string_to_upper(string s){
-//string state = s;
-//int i = 0;
-//while (i < state.length()) {
-//    state.s = toupper(letter);
- //  i++;
-//}
+string state;
+int i = 0;
+char cr =' ';
+while (i < state.length()) {
+   //const char *cr = s.substr(i,i+1).c_str();
+   strcpy(cr, s.substr(i,i+1).c_str());
+    state += toupper(cr);
+   i++;
+}
 //cout << count << endl;
-
-
+    return state;
 }
 string string_to_lower(string s){
-
-    
+string state;
+int i = 0;
+char cr =' ';
+while (i < state.length()) {
+   //const char *cr = s.substr(i,i+1).c_str();
+   strcpy(cr, s.substr(i,i+1).c_str());
+    state += tolower(cr);
+   i++;
+}
+//cout << count << endl;
+    return state;
 }
 
 int main()
