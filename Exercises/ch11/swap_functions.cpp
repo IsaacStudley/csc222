@@ -1,5 +1,38 @@
 #include <iostream>
+#include<array> 
+#include <string>
 using namespace std;
+
+int str_len(char s[])
+{
+   return strlen(s);
+}
+
+void shuffle(int arr[], int size) //there isnt a way to get array size after its been passed on
+{
+    srand(time(NULL)); //there is some weirdness with the rng
+    //int al = sizeof(arr)/sizeof(arr[0]);
+    int hold[size];
+    int sw[size];
+    for (int i = 0; i < size; i++) {
+     hold[i]=0;
+     sw[i]=arr[i];
+    }
+    int se = 0;
+    
+
+for (int i = 0; i < size; i++) {
+       // cout << "Random number " << i << ": " << rand() %10 << endl;
+se = rand()%size;
+while(hold[se]==1){
+   se = rand()%size;
+}
+       hold[se]=1;
+       arr[i] = sw[se];
+    }
+
+
+}
 
 void wont_swap(char a, char b)
 {
@@ -25,6 +58,8 @@ void will_swap(char& a, char& b)
 
 int main()
 {
+    int nums[7] = {0,1,2,3,4,5,6};
+    
     char x = 'x';
     char y = 'y';
 
@@ -38,5 +73,9 @@ int main()
     will_swap(x, y);
     cout << "x: " << x << "  y: " << y << endl;
 
-    return 0;  // It returns different adresses each time
+    shuffle(nums, 7);
+  for (int i = 0; i < 7; i++) {
+    cout<< nums[i] <<" "; 
+  }
+    return 0;  
 }
