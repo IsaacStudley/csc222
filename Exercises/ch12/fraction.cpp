@@ -1,14 +1,8 @@
 #include <iostream>
 #include <math.h>
+#include <fraction.h>
 using namespace std;
 
-struct Fraction {
-    int nume, deno;
-   
-
-    void print();
-    
-};
 
 Fraction::Fraction(int h, int m)
 {
@@ -19,11 +13,11 @@ Fraction::Fraction()
   nume = 0; deno = 1; 
 }
 
-void minus::Fraction(){
+void Fraction::minus(){
 
-    Franction.nume --;
+   nume --;
 }
-}
+
 
 int main(){
 
