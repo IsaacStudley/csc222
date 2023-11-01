@@ -18,6 +18,16 @@ void Fraction::minus(){
    nume --;
 }
 
+string Fraction::to_string(){
+  string str;
+  if(deno!=0){
+   str = nume+"/"+deno;
+  }else{
+   str = nume+"";
+  }
+  return str;
+}
+
 
 int main(){
 
