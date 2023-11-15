@@ -1,10 +1,6 @@
-struct Card
-{
-    int suit, rank;
-
-    Card();
-    Card(int s, int r);
-};
+#include <iostream>
+#include "playing_card.h"
+using namespace std;
 
 Card::Card() {
     suit = 0; rank = 0;
