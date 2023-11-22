@@ -23,3 +23,18 @@ Deck::Deck()
         }
     }
 }
+
+void Deck::print() const
+{
+    for (int i = 0; i < cards.size(); i++) {
+        cout << cards[i].to_string() << endl;
+    }
+}
+
+int Deck::find(Card card) const
+{
+    for (int i = 0; i < deck.cards.size(); i++) {
+        if (deck.cards[i].equals(card)) return i;
+    }
+    return -1;
+}
