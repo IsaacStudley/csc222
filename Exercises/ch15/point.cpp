@@ -5,21 +5,35 @@
 #include "point.h"
 using namespace std;
 
-Point::Point(int a, int b) {
-    x = a; y = b;
-    
+int Point::get_x() {
+    return x;
 }
 
-Point operator+(const int a)
-{
-    x+=a;
-    y+=a;
-    //return p1; 
-} // overloading output, though I am 
+int Point::get_y() {
+    return y;
+}
 
-Point operator-(const int a)
-{
-    x-=a;
-    y-=a;
-    //return p1; 
-} // overloading output 
+Point Point::operator + (const Point& p) {
+    return Point(x + p.x, y + p.y);
+}
+
+Point Point::operator - (const Point& p) {
+    return Point(x - p.x, y - p.y);
+}
+
+Point operator * (int scalar, Point &p1) {
+    return Point(p1.get_x() * scalar, p1.get_y() * scalar);
+}
+
+string Point::to_string() {
+    return "(" + std::to_string(x) + ", " + std::to_string(y) + ")";
+}
+
+double Point::distance(Point p2) {
+    return sqrt((x + p2.x) * (x + p2.x) + (y + p2.y) * (y + p2.y));
+}
+
+ostream &operator<<(ostream &os, const Point &p) {
+  os << "(" << p.x << ", " << p.y << ")";
+  return os;
+}
