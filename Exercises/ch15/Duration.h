@@ -5,26 +5,24 @@ using namespace std;
 class Duration
 {
     double x, y;
+    int sec;
     string str;
 public:
-    Duration() {
-        
-    }
+    Duration(); 
 
-    Duration(int a) {
-        x = a; 
-        y = b;
-    }
+    Duration(int a); 
 
-    int get_x();
-    int get_y();
+    int days();
+    int hours();
+    int minutes();
+    int seconds();
+
     string to_string();
 
-    Point operator + (const Point& p);
-    Point operator - (const Point& p);
-    double distance(Point p2);
-
-    friend ostream & operator<<(ostream &os, const Point &c);
+    Duration operator + (Duration P);
+    Duration operator - (Duration P);
+    
+    //friend ostream & operator<<(ostream &os, const Duration &c);
 };
 
-Point operator * (int scalar, Point &p1);
+//Point operator * (int scalar, Point &p1);
