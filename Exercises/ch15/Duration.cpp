@@ -22,8 +22,14 @@ if(sec < 86400){
 return "PT" + std::to_string(hours())+ "H" + std::to_string(minutes())+ "M" + std::to_string(seconds()) + "S"; 
 }
 if(sec >= 86400){
+    if (seconds()==0){
+return "P" + std::to_string(days())+ "DT" + std::to_string(hours())+ "H" + std::to_string(minutes())+ "M"; 
+    }
 return "P" + std::to_string(days())+ "D" + std::to_string(hours())+ "H" + std::to_string(minutes())+ "M" + std::to_string(seconds()) + "S"; 
 }
+
+
+
 return "error";
 }
 
